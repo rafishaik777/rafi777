@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>
+            registration
+        </title>
+    </head>
+    <body bgcolor="Beige(#DDD0C8),dark grey(#323232)">  
+
+    <form>
+        <h2> Registration Form</h2>
+        
+        <label> Firstname </label>         
+        <input type="text" name="firstname" size="15"/> <br> <br>  
+        <label> Middlename: </label>     
+        <input type="text" name="middlename" size="15"/> <br> <br>  
+        <label> Lastname: </label>         
+        <input type="text" name="lastname" size="15"/> <br> <br> 
+        <label for="phone">
+            Enter your phone number:<br/>
+        </label>
+        <input type="text" name="country code" value="+91" size="2/"> 
+        <input type="text" name="phone" size="10"/> <br><br>
+        Email:
+        <input type="email" id="email" name="email"/> <br><br>
+
+        <label>   
+            Course :  
+            </label>   
+            <select>  
+            <option value="Course">Course</option>  
+            <option value="BCA">BCA</option>  
+            <option value="BBA">BBA</option>  
+            <option value="B.Tech">B.Tech</option>  
+            <option value="MBA">MBA</option>  
+            <option value="MCA">MCA</option>  
+            <option value="M.Tech">M.Tech</option>  
+            </select>  <br> <br>
+
+        languages known:
+        <input type="checkbox" namew ="chbtelugu">Telugu
+        <input type="checkbox" name="chbenglish">English
+        <input type="checkbox" name="chbhindi"> Hindi
+        <input type="checkbox" name="chbtamil">Tamil
+        <br><br>
+        gender:<input type="radio" name="rbgender" checked> male
+        <input type="radio"name="rbgender"> Female 
+        <input type="radio" name="rbgender"/> Other  <br><br>
+        Select the state you belong to:
+        <select>
+            <option> Andhra pradesh</option>
+            <option> Telangana</option>
+            <option> Tamail nadu</option>
+            <option> karnataka</option>
+            <option> maharashtra</option>
+
+        </select>
+        <br><br>
+        Address  
+<br>  
+<textarea cols="80" rows="5" value="address">  
+</textarea>  
+<br> <br>  
+        <br> <br> Any comments:
+        <textarea rows="2" cols="25"> </textarea> <br><br>
+        Upload your image
+        <input type="file" value="Upload"> <br> <br>
+        Password:  
+<input type="Password" id="pass" name="pass"> <br>   
+<br> <br>  
+Re-type password:  
+<input type="Password" id="repass" name="repass"> <br> <br>  
+        <input type="button" value="Submit"/>
+        
+        <input type="reset" value="reset"> <br>
+</body>
+    </form>
+</html>
