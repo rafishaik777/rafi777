@@ -1,0 +1,103 @@
+Sure, here's an updated version of the registration form page with the validations you've specified:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form id="registrationForm" onsubmit="return validateForm()" >
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <span id="nameError" class="error"></span><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <span id="emailError" class="error"></span><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <span id="passwordError" class="error"></span><br><br>
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" required>
+        <span id="phoneNumberError" class="error"></span><br><br>
+        <input type="submit" value="Register">
+    </form>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var phoneNumber = document.getElementById('phoneNumber').value;
+            var nameError = document.getElementById('nameError');
+            var emailError = document.getElementById('emailError');
+            var passwordError = document.getElementById('passwordError');
+            var phoneNumberError = document.getElementById('phoneNumberError');
+            var isValid = true;
+
+            // Reset errors
+            nameError.textContent = '';
+            emailError.textContent = '';
+            passwordError.textContent = '';
+            phoneNumberError.textContent = '';
+
+            // Name validation
+            if (!name) {
+                nameError.textContent = 'Name is required';
+                isValid = false;
+            } else if (!/^[a-zA-Z]+$/.test(name)) {
+                nameError.textContent = 'Name should contain only alphabets';
+                isValid = false;
+            } else if (name.length < 6) {
+                nameError.textContent = 'Name must be at least 6 characters';
+                isValid = false;
+            }
+
+            // Email validation
+            if (!email) {
+                emailError.textContent = 'Email is required';
+                isValid = false;
+            } else if (!isValidEmail(email)) {
+                emailError.textContent = 'Invalid email format';
+                isValid = false;
+            }
+
+            // Password validation
+            if (!password) {
+                passwordError.textContent = 'Password is required';
+                isValid = false;
+            } else if (password.length < 6) {
+                passwordError.textContent = 'Password must be at least 6 characters';
+                isValid = false;
+            }
+
+            // Phone number validation
+            if (!phoneNumber) {
+                phoneNumberError.textContent = 'Phone number is required';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        function isValidEmail(email) {
+            // Simple email validation regex
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    </script>
+</body>
+</html>
+
+

@@ -1,11 +1,49 @@
-<html>
-    <head>
-        <h1> LOGIN FORM </h1> </head>
-        <body bgcolor="pink" </body>
-        <form>
-            username: <input type=""text" name="txtuname"><br> <br>
-            password: <input type="password" name="txtpwd"><br><br>
-            <input type ="submit" value="login">&nbsp;&nbsp; 
-            <input type="reset" value="clear">
-        </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+</head>
+<body>
+
+    <h2>Login Form</h2>
+
+    <form action="thank.html" method="post" onsubmit="return validateForm()">
+        <label>Username:</label>
+        <input type="text" id="txtlogin" name="txtlogin"><br><br>
+
+        <label>Password:</label>
+        <input type="password" id="txtpassword" name="txtpassword"><br><br>
+
+        <input type="submit" value="Login">
+        
+        <input type="reset" value="Reset">
+    </form>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById("txtlogin").value; 
+             var password = document.getElementById("txtpassword").value; 
+            if (username.length < 6) { 
+                alert("Login name should be greater than 6 characters");
+                return false; 
+            }
+            if (password.length < 6) { 
+                alert("Password should be greater than 6 characters");
+                return false; 
+            }
+            if (username === "" || password === "") { 
+                alert("Please enter both username and password");
+                return false; 
+            }
+            if (username === password) { 
+            alert("Username and password cannot be the same");
+            return false;
+            }
+            return true;
+        }
+    </script>
+
+</body>
 </html>

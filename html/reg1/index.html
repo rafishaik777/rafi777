@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <script>
+        function validation() {
+            var errors = "";
+            var re = /^[A-Za-z\s']/; 
+            var re2 = /^[0-9]/;
+
+            if (document.frmreg.txtname.value.length < 6 || !document.frmreg.txtname.value.match(re)) {
+                errors += "Name should be more than 6 characters and contain alphabets only.\n";
+            }
+
+            if (document.frmreg.textpassword.value.length < 6) {
+                errors += "Password should be more than 6 characters.\n";
+            }
+
+            var x = document.frmreg.textemail.value.indexOf("@");
+            if (x <= 0 || x === document.frmreg.textemail.value.length - 1) {
+                errors += "Enter a valid email.\n";
+            }
+
+            if (document.frmreg.textphno.value.length !== 10 || !document.frmreg.textphno.value.match(re2)) {
+                errors += "Phone number should be exactly 10 digits and have digits only.\n";
+            }
+
+            if (document.frmreg.dob.value === "") {
+                errors += "Please enter Date of Birth.\n";
+            }
+
+            if (document.frmreg.course.value === "") {
+                errors += "Please select a Course.\n";
+            }
+
+            if (document.frmreg.state.value === "") {
+                errors += "Please select a State.\n";
+            }
+
+            if (document.frmreg.address.value === "") {
+                errors += "Please enter Address.\n";
+            }
+
+            if (document.frmreg.comments.value === "") {
+                errors += "Please enter Comments.\n";
+            }
+
+            if (errors !== "") {
+                alert(errors);
+                return false;
+            }
+
+            return true;
+        }
+
+        
+            
+        
+    </script>
+</head>
+    
+<body bgcolor="beige">
+
+    <h2>Registration Form</h2>
+
+    <form name="frmreg" action="thank.html" method="post" onsubmit="return validation();">
+        
+        <label for="txtname">Name::</label>         
+        <input type="text" name="txtname" id="txtname" size="15"  required/> <br><br>
+        
+        <label for="countrycode">Country Code:</label>
+        <input type="tel" id="countrycode" name="countrycode" value="+91" size="2" /> 
+        <label for="textphno">Phone Number:</label>
+        <input type="tel" id="textphno" name="textphno" size="10" required/> <br><br>
+        
+        <label for="textemail">Email:</label>
+        <input type="email" id="textemail" name="textemail" required/> <br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required /><br><br>
+
+        <label for="course">Course:</label>
+        <select name="course" id="course"  required>  
+            <option value="">Select Course</option>  
+            <option value="BCA">BCA</option>  
+            <option value="BBA">BBA</option>  
+            <option value="B.Tech">B.Tech</option>  
+            <option value="MBA">MBA</option>  
+            <option value="MCA">MCA</option>  
+            <option value="M.Tech">M.Tech</option>  
+        </select><br><br>
+
+        <label>Languages known:</label><br>
+        <select name="language" id="language" required >
+        <input type="checkbox" name="chbtelugu">Telugu
+        <input type="checkbox" name="chbenglish">English
+        <input type="checkbox" name="chbhindi">Hindi
+        <input type="checkbox" name="chbtamil">Tamil
+        </select>
+        <br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" name="rbgender" id="male" checked> Male
+        <input type="radio" name="rbgender" id="female"> Female 
+        <input type="radio" name="rbgender" id="other"> Other  <br><br>
+
+        <label>Select the state you belong to:</label>
+        <select name="state" id="state" required >
+            <option value="">Select State </option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Maharashtra">Maharashtra</option>
+        </select>
+        <br><br>
+
+        <label for="address">Address:</label><br>
+        <textarea cols="25" rows="6" id="address" name="address"  required></textarea><br><br>
+
+        <label for="comments">Any comments:</label><br>
+        <textarea rows="6" cols="25" id="comments" name="comments" required ></textarea><br><br>
+
+        <label for="upload">Upload your resume:</label>
+        <input type="file" id="upload" name="upload"  required > <br><br>
+
+        <label for="textpassword">Password:</label>
+        <input type="password" id="textpassword" name="textpassword" required > <br><br>
+
+        <label for="repass">Re-type Password:</label>
+        <input type="password" id="repass" name="repass"  required> <br><br>
+
+        <div>
+            <input type="submit" id="btnsubmit" name="btnsubmit" value="Submit">&nbsp; <br> <br>
+        </div>
+         <input type="reset" id="btnreset" name="btnreset" value="Reset"> <br>
+    </form>
+</body>
+</html>

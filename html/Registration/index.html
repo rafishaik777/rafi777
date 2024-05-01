@@ -1,28 +1,78 @@
-<html>
-    <head>
-        <title>
-            registration
-        </title>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registrationForm</title>
+    <script language = "JavaScript">
+        function Validation()
+        {
+    var valid=true;
+    var re = new RegExp("[A-Za-z']", "g");
+
+    var re2 = new RegExp("[^0-9]","g");
+    var x = document.frmreg.txtemail.value.indexOf("@",0);
+
+    if(document.frmreg.txtname.value.length < 6 ) {
+        alert("name should be more than 6 characters")
+        valid = false;
+        return valid;
+
+    }
+    if(document.frmreg.txtname.value.match(re)) 
+     {
+        alert("name should be alphabets only")
+        valid = false;
+        return valid;
+     }
+     if(document.frmreg.txtpassword.length < 6 ) {
+        alert("password should be more than 6 characters")
+        valid = false;
+        return valid;
+     }
+     if(document.frmreg.txtemail.value.indexOf("@",5) < 0 ) {
+        alert("enter a valid email")
+        valid = false;
+        return valid;
+     }
+     if(document.frmreg.txtphno.value.length < 10)
+     {
+        alert("phone number should be 10 digits")
+        valid = false;
+        return valid;
+     }
+
+     if(document.frmreg.txtphno.value,match(re2) )
+     {
+        alert("phone number should have digits only ")
+        valid = false;
+        return valid;
+     }
+     return valid;
+    }
+</script>
+
+
+</head>
+    
     <body bgcolor="beige(#DDD0C8),dark grey(#323232)">  
 
     <form>
         <h2> Registration Form</h2>
+        <form name="frmreg" action="thank.html" method="post" onsubmit="return Validation();">
         
         <label> Firstname </label>         
-        <input type="text" name="firstname" size="15"/> <br> <br>  
-        <label> Middlename: </label>     
-        <input type="text" name="middlename" size="15"/> <br> <br>  
-        <label> Lastname: </label>         
-        <input type="text" name="lastname" size="15"/> <br> <br> 
+        <input type="text" name="txtname" size="15"/> <br> <br>
         <label for="phone">
             Enter your phone number:<br/>
         </label>
-        <input type="text" name="country code" value="+91" size="2/"> 
-        <input type="text" name="phone" size="10"/> <br><br>
-        Email:
-        <input type="email" id="email" name="email"/> <br><br>
+        <input type="tel" id="country code" name="country code" value="+91" size="2/"> 
+        <input type="tel" id="textphno" name="textphno"size="10"/> <br><br>
+       <label> Email:/label> 
+        <input type="text" id="textemail" name="textemail"/> <br><br>
 
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
         <label>   
             Course :  
             </label>   
@@ -37,7 +87,7 @@
             </select>  <br> <br>
 
         languages known:
-        <input type="checkbox" namew ="chbtelugu">Telugu
+        <input type="checkbox" name ="chbtelugu">Telugu
         <input type="checkbox" name="chbenglish">English
         <input type="checkbox" name="chbhindi"> Hindi
         <input type="checkbox" name="chbtamil">Tamil
@@ -57,21 +107,23 @@
         <br><br>
         Address  
 <br>  
-<textarea cols="80" rows="5" value="address">  
-</textarea>  
+<textarea cols="25" rows="6" value="address">  </textarea>  
 <br> <br>  
-        <br> <br> Any comments:
-        <textarea rows="2" cols="25"> </textarea> <br><br>
+        Any comments:
+        <textarea rows="6" cols="25"> </textarea> <br><br>
         Upload your image
         <input type="file" value="Upload"> <br> <br>
         Password:  
-<input type="Password" id="pass" name="pass"> <br>   
+<input type="text" id="textpassword" name="textpassword"> <br>   
 <br> <br>  
 Re-type password:  
-<input type="Password" id="repass" name="repass"> <br> <br>  
-        <input type="button" value="Submit"/>
+<input type="text" id="repass" name="repass"> <br> <br>  
+<div>
+<input type="submit"  id="btnsubmit" name="btnsubmit" value="submit"> &nbsp;
+</div>
         
-        <input type="reset" value="reset"> <br>
+        <input type="reset" id="btnreset"   name="btnreset" value="reset"> <br>
+</form>
 </body>
-    </form>
+    
 </html>
