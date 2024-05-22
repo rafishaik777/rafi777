@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+    
+
+}
+body {
+
+    background-color: hsl(228, 45%, 44%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    border-radius: 10px;
+}
+.main{
+    background-color: white;
+    width: max-content;
+    height: max-content;
+    display: flex;
+    border-radius: 10px;
+    padding: 20px;
+}
+#p{
+    font-size: 20px;
+    padding: 20px;
+
+}
+.para{
+    size: 30px;
+}
+.image{
+    padding: 20px;
+}
+.max{
+    padding-right: 20px;
+}
+
+.bu {
+    
+    background-color: #007bff; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none; 
+        border-radius: 5px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.bu:hover {
+    background-color: black; 
+}

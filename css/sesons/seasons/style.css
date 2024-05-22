@@ -1,0 +1,183 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.header-content .logo {
+    max-height: 60px;
+    margin-left: 20px;}
+
+.seasons {
+    margin-bottom: 20px;
+}
+
+.seasons h2 {
+    text-align: center;
+    color: #333;
+}
+
+.season-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.season {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 10px;
+    text-align: center;
+    width: 45%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.season img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.season h3 {
+    margin: 0;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.season:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.contact-us {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.contact-us h2 {
+    margin-top: 0;
+}
+
+.contact-us p {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.contact-us form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-us label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.contact-us input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-us button {
+    padding: 10px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-us button:hover {
+    background-color: #066be75c;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.places {
+    margin-bottom: 20px;
+}
+
+.places h2 {
+    text-align: center;
+    color: #333;
+}
+
+.place-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.place {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 10px;
+    text-align: center;
+    width: 30%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.place img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.place h3 {
+    margin: 0;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.place p {
+    padding: 0 10px 10px 10px;
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.place:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.thank-you {
+    text-align: center;
+    margin: 20px 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
